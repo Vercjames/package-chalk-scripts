@@ -166,7 +166,7 @@ class Script {
     }
   }
 
-  public log() {
+  public async log() {
     let consoleMessage: string = ""
     const elapsed: string = this.getElapsedTime()
 
