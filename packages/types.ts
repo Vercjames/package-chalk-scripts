@@ -8,6 +8,7 @@ export type TConfigInput = {
   file?: string | null
   func?: string | null
   folder?: string | null
+  silence?: boolean
   logText?: string | null
   logOrder?: TLogOrder
   saveOrder?: TSaveOrder
@@ -22,6 +23,7 @@ export type TConfigOutput = {
   func: string | null
   stack: string | null
   stackTime: number | null
+  silence: boolean
   folder: string | null
   logText: string | null
   logOrder: TLogOrder

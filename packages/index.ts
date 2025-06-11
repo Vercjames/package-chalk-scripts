@@ -18,24 +18,37 @@ export { TLogOrder, TSaveOrder, TLogType, TSaveOutput, TConstructor, TConfigOutp
 class Script {
   private id: string = "xxxxxxxxxx"
 
+  // WHAT: Where the files should be saved
   private root: string
 
+  // WHAT: Name of the function logged
   private func: string | null = null
 
+  // WHAT: Name of the file to be saved
   private file: string | null = null
 
+  // WHAT: Stack Trace used to group logs with the same origin
   private stack: string | null = "xxxxxx"
 
+  // WHAT: Stack Trace time since initiated
   private stackTime: number | null = null
 
+  // WHAT: Name of the folder to store the log file in. (will create folder)
   private folder: string | null = null
 
+  // WHAT: prevents a log regardless of scope. generally used to silence an unwanted log when deployed
+  private silence: boolean = false
+
+  // WHAT: The logged text
   private logText: string | null = null
 
+  // WHAT: the logged order
   private logOrder: TLogOrder
 
+  // WHAT: the save order
   private saveOrder: TSaveOrder
 
+  // WHAT:The type of log (sets color)
   private logType: "default" | "success" | "warning" | "mistake" | "insight" = "default"
 
   private static defaults = new Script() // Store default values
@@ -59,13 +72,13 @@ class Script {
     this.saveOrder = config.saveOrder || ["id", "created", "elapsed", "stack", "func"]
   }
 
-  // VERC: Static instance to allow for nuanced log creation
+  // NOTE: Static instance to allow for nuanced log creation
   public static get getInstance(): Script {
     // eslint-disable-next-line
     return this.instance || (this.instance = new this())
   }
 
-  // VERC: Allow for stackName and folder to be set ahead of time for stacking
+  // NOTE: Allow for stackName and folder to be set ahead of time for stacking
   public async start(config: TConfigInput): Promise<TConfigOutput> {
     return {
       id: config?.id ?? this.id,
@@ -74,6 +87,7 @@ class Script {
       func: config?.func ?? this.func,
       stack: (Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000).toString(),
       stackTime: Date.now(),
+      silence: config?.silence ?? this.silence,
       folder: config?.folder ?? this.folder,
       logText: config?.logText ?? this.logText,
       logOrder: config?.logOrder ?? this.logOrder,
@@ -102,14 +116,14 @@ class Script {
     return this
   }
 
-  // VERC: Get the time difference between "stackTime" and the time the log is called
+  // NOTE: Get the time difference between "stackTime" and the time the log is called
   private getElapsedTime(): string {
     const now = Date.now()
     const start = this.stackTime || Date.now()
     return ((now - start) / 1000).toFixed(4).padStart(9, "0")
   }
 
-  // VER: Function to set id
+  // NOTE: Function to set id
   public sid(idNumber: number | string) {
     if (idNumber) {
       const idStr = idNumber.toString()
@@ -166,7 +180,10 @@ class Script {
     }
   }
 
-  public async log() {
+  public async log({ mute = false }: { mute: boolean }) {
+    if (mute) return this
+    if (this.silence) return this
+
     let consoleMessage: string = ""
     const elapsed: string = this.getElapsedTime()
 
@@ -190,7 +207,7 @@ class Script {
     return this
   }
 
-  public async save(folder?: string | null, fileName?: string | null): Promise<TSaveOutput> {
+  public async save(folder?: string | null, fileName?: string | null): Promise<TSaveOutput | undefined> {
     const dateFolder = new Date().toISOString().split("T")[0]
     const logFolder = this.folder || folder
     const directoryPath: string = logFolder
