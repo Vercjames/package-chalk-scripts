@@ -180,7 +180,7 @@ class Script {
     }
   }
 
-  public async log({ mute = false }: { mute?: boolean }) {
+  public async log({ mute = false }: { mute?: boolean } = {}) {
     if (mute) return this
     if (this.silence) return this
 
