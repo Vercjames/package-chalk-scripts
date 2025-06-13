@@ -207,7 +207,7 @@ class Script {
     return this
   }
 
-  public async save(folder?: string | null, fileName?: string | null): Promise<TSaveOutput | undefined> {
+  public async save(folder?: string | null, fileName?: string | null): Promise<TSaveOutput> {
     const dateFolder = new Date().toISOString().split("T")[0]
     const logFolder = this.folder || folder
     const directoryPath: string = logFolder
@@ -228,7 +228,7 @@ class Script {
     fs.mkdirSync(directoryPath, { recursive: true })
     const filePath = path.join(directoryPath, getFileName())
 
-    // Handle blank JSON file
+    // NOTE: Handle edge case of a blank JSON file
     let existingData = []
     if (fs.existsSync(filePath)) {
       existingData = JSON.parse(fs.readFileSync(filePath, { encoding: "utf8" }))
@@ -264,6 +264,11 @@ class Script {
     fs.writeFileSync(filePath, jsonData) // Write with custom formatting
 
     return logData
+  }
+
+  public async record(): Promise<TSaveOutput> {
+    await this.log()
+    return this.save()
   }
 }
 
