@@ -35,16 +35,24 @@ export type TScriptInputs = {
   saveSequence?: TSequence
 }
 
-
-// Application Structure || Define Outputs
-// =======================================================================================
-// =======================================================================================
-
-
 // Application Structure || Define Constructor
 // =======================================================================================
 // =======================================================================================
 export type TConstructor = {
-  trace?: string,
-  startTime?: number
+  trace: string
+  startTime: number
 } & TScriptInputs
+
+
+
+// Application Structure || Define Outputs
+// =======================================================================================
+// =======================================================================================
+export type TScriptOutputs = {
+  logText: string
+  timeElapsed: string
+} & TConstructor
+
+
+
+

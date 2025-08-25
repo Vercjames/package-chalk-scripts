@@ -6,7 +6,7 @@ import { sleep } from "../../../utils"
 // =======================================================================================
 // =======================================================================================
 const app = express()
-const duration = 100
+const duration = 500
 const port = process.env.PORT || 4000
 
 
@@ -14,43 +14,35 @@ const port = process.env.PORT || 4000
 // =======================================================================================
 // =======================================================================================
 app.get("/", async (req, res) => {
-  const script = scripts()
+  const script = scripts({ id: "1234567890", name: "route(/)" })
 
-  script.default("init")
-  script.warning("init")
-  script.success("init")
-  script.failure("init")
-  script.insight("init")
-  script.tracker("init")
+  await script.default("default")
+  await script.warning("warning")
+  await script.success("success")
+  await script.failure("failure")
+  await script.insight("insight")
+  await script.tracker("tracker")
   await sleep(duration)
-  script.log("2")
+  await script.default("Offset Check 1")
   await sleep(duration)
-  script.log("3")
+  await script.default("Offset Check 2")
   await sleep(duration)
-  const apple = script.log("4")
-  console.log(apple)
+  await script.default("Offset Check 3")
 
-  script.insight("Hello World! This is the simplest Express app.")
-  // logger.info("GET request received on /")
   res.json({
     message: "Hello World! This is the simplest Express app.",
     timestamp: new Date().toISOString()
   })
 })
 
-app.get("/health", (req, res) => {
-  // logger.success("Health check requested")
-  res.json({ status: "healthy" })
-})
 
-app.post("/test", (req, res) => {
-  // logger.debug("POST request received on /test")
-  // logger.warn("This is a test warning")
+app.get("/values", async (req, res) => {
+  const script = scripts({ id: "1234567890", name: "route(/values)" })
+  await script.values("example text string", { rawr: "rawr" })
   res.json({ message: "Test endpoint", body: req.body })
 })
 
 app.use("*", (req, res) => {
-  // logger.error(`Route not found: ${req.method} ${req.originalUrl}`)
   res.status(404).json({ error: "Route not found" })
 })
 
