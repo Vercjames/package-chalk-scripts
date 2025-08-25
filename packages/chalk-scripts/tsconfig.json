@@ -1,8 +1,15 @@
 {
-  "extends": "@repo/typescript-config/base.json",
+  "extends": "@repo/config-typescript/index.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./build"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "out",
+    "dist",
+    "build",
+    "node_modules"
+  ]
 }

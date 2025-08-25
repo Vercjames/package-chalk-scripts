@@ -2,8 +2,8 @@
   "name": "chalk-scripts",
   "private": true,
   "scripts": {
+    "dev": "yarn build:chalk-scripts && turbo run dev --filter=with-express",
     "build": "turbo run build",
-    "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "turbo run lint -- --fix",
     "check-types": "turbo run check-types",

@@ -1,6 +1,0 @@
-*
-!build/**/*
-!packages/**/*
-!package.json
-!LICENSE
-!README.md

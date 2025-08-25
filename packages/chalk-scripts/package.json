@@ -1,16 +1,16 @@
 {
   "name": "chalk-scripts",
-  "version": "1.0.0",
+  "version": "2.0.0-rc.1",
   "description": "A simple logging package with chalk styling",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./build/index.js",
+  "module": "./build/index.mjs",
+  "types": "./build/index.d.ts",
   "files": [
-    "dist/**"
+    "build/**"
   ],
   "scripts": {
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --out-dir build --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts --out-dir build",
     "lint": "eslint src/**/*.ts",
     "check-types": "tsc --noEmit"
   },
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@repo/config-eslint": "*",
-    "@repo/typescript-config": "*",
+    "@repo/config-typescript": "*",
     "tsup": "^8.0.2",
     "typescript": "^5.9.2",
     "eslint": "^9.33.0"
