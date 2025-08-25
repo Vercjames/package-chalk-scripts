@@ -33,6 +33,7 @@ export default [
       semi: ["error", "never"],
       quotes: ["error", "double"],
       indent: ["error", 2, { SwitchCase: 1 }],
+      "comma-dangle": ["error", "never"],
       "object-curly-spacing": ["error", "always"],
       "arrow-spacing": ["error", { before: true, after: true }],
       "keyword-spacing": ["error", { before: true, after: true }],
