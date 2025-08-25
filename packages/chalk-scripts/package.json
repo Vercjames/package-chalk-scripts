@@ -1,7 +1,16 @@
 {
   "name": "chalk-scripts",
+  "license": "MIT",
   "version": "2.0.0-rc.1",
-  "description": "A simple logging package with chalk styling",
+  "author": "https://github.com/vercjames",
+  "homepage": "https://github.com/vercjames/package-chalk-scripts",
+  "description": "A stylized,Typescript based logging package for Node.js 😎" ,
+  "keywords": [
+    "logging",
+    "chalk",
+    "console",
+    "colors"
+  ],
   "main": "./build/index.js",
   "module": "./build/index.mjs",
   "types": "./build/index.d.ts",
@@ -12,16 +21,8 @@
     "dev": "tsup src/index.ts --format cjs,esm --dts --out-dir build --watch",
     "build": "tsup src/index.ts --format cjs,esm --dts --out-dir build",
     "lint": "eslint src/**/*.ts",
-    "check-types": "tsc --noEmit"
+    "format": "eslint src/**/*.ts --fix"
   },
-  "keywords": [
-    "logging",
-    "chalk",
-    "console",
-    "colors"
-  ],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2"
   },

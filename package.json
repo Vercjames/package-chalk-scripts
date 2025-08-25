@@ -1,15 +1,16 @@
 {
-  "name": "chalk-scripts",
+  "name": "package-chalk-scripts",
+  "license": "MIT",
+  "author": "https://github.com/vercjames",
+  "homepage": "https://github.com/vercjames/package-chalk-scripts",
+  "description": "A stylized,Typescript based logging package for Node.js 😎" ,
   "private": true,
   "scripts": {
-    "dev": "yarn build:chalk-scripts && turbo run dev --filter=with-express",
-    "build": "turbo run build",
+    "dev": "turbo run build && turbo run dev --filter=with-express",
+    "build": "turbo run build --filter=chalk-scripts",
     "lint": "turbo run lint",
-    "format": "turbo run lint -- --fix",
-    "check-types": "turbo run check-types",
-    "dev:express": "turbo run dev --filter=with-express",
-    "build:chalk-scripts": "turbo run build --filter=chalk-scripts",
-    "clean": "turbo run clean"
+    "clean": "turbo run clean",
+    "format": "turbo run format"
   },
   "devDependencies": {
     "turbo": "^2.5.6",
