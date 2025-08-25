@@ -1,0 +1,15 @@
+[
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:35:30.977Z","elapsed":"0002.5510","stack":"702424","func":"script.test.ts","logType":"default","logText":"test 3 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:35:29.969Z","elapsed":"0001.5430","stack":"702424","func":"script.test.ts","logType":"default","logText":"test 2 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:35:28.951Z","elapsed":"0000.5250","stack":"702424","func":"script.test.ts","logType":"default","logText":"test 1 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:35:07.909Z","elapsed":"0002.5590","stack":"414332","func":"script.test.ts","logType":"default","logText":"test 3 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:35:06.902Z","elapsed":"0001.5520","stack":"414332","func":"script.test.ts","logType":"default","logText":"test 2 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:35:05.890Z","elapsed":"0000.5400","stack":"414332","func":"script.test.ts","logType":"default","logText":"test 1 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:23:38.085Z","elapsed":"0002.5450","stack":"623717","func":"script.test.ts","logType":"default","logText":"test 3 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:23:37.078Z","elapsed":"0001.5380","stack":"623717","func":"script.test.ts","logType":"default","logText":"test 2 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:23:36.073Z","elapsed":"0000.5330","stack":"623717","func":"script.test.ts","logType":"default","logText":"test 1 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:21:03.320Z","elapsed":"0001.5560","stack":"477213","func":"script.test.ts","logType":"default","logText":"test 2 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:21:02.306Z","elapsed":"0000.5420","stack":"477213","func":"script.test.ts","logType":"default","logText":"test 1 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:20:33.819Z","elapsed":"0001.5460","stack":"960350","func":"script.test.ts","logType":"default","logText":"test 2 - logged and saved"},
+  {"id":"xxxxxxxxxx","created":"2024-12-30T19:20:32.804Z","elapsed":"0000.5310","stack":"960350","func":"script.test.ts","logType":"default","logText":"test 1 - logged and saved"}
+]
