@@ -1,5 +1,4 @@
 import express from "express"
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { script, sleep } from "chalk-scripts"
 
 const PORT = 4000
