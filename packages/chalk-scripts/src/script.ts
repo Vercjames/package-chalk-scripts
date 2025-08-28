@@ -61,7 +61,7 @@ export class Script {
         case ELogType.SUCCESS:
           return chalk.green
         case ELogType.WARNING:
-          return chalk.yellow
+          return chalk.hex('#FFA500')
         case ELogType.FAILURE:
           return chalk.red
         case ELogType.INSIGHT:
@@ -70,7 +70,7 @@ export class Script {
           return chalk.magenta
         case ELogType.DEFAULT:
         default:
-          return chalk.white
+          return (text: string) => text
       }
     }
 
@@ -129,11 +129,12 @@ export class Script {
   }
 
   // NOTE: Update script configuration
-  async set(updates: Partial<TScriptInputs>): Promise<void> {
+  async set(updates: Partial<TScriptInputs>): Promise<this> {
     this.options = {
       ...this.options,
       ...updates
     }
+    return this
   }
 
   // Application Structure || Mono Methods

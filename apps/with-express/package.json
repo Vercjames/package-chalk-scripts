@@ -9,13 +9,13 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "chalk-scripts": "*"
+    "chalk-scripts": "workspace:*"
   },
   "devDependencies": {
-    "@repo/config-eslint": "*",
-    "@repo/config-typescript": "*",
+    "@repo/config-eslint": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
     "@types/express": "^4.17.21",
-    "@types/node": "^20.11.5",
+    "@types/node": "20.11.5",
     "tsx": "^4.7.0",
     "typescript": "^5.9.2",
     "eslint": "^9.33.0"

@@ -2,8 +2,8 @@
 // =======================================================================================
 // =======================================================================================
 import { Script } from "./script"
-import { TSequence, ELogStyle, ELogType } from "./types"
-import { TScriptInputs, TScriptOutputs, IScript } from "./scriptIO"
+import { IScript, TSequence, ELogStyle, ELogType } from "./types"
+import { TScriptInputs, TScriptOutputs } from "./scriptIO"
 
 
 // Application Structure || Export Module

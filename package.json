@@ -4,9 +4,10 @@
   "author": "https://github.com/vercjames",
   "homepage": "https://github.com/vercjames/package-chalk-scripts",
   "description": "A stylized,Typescript based logging package for Node.js 😎" ,
+  "packageManager": "pnpm@10.0.0",
   "private": true,
   "scripts": {
-    "dev": "turbo run build && turbo run dev --filter=with-express",
+    "dev": "turbo run dev",
     "build": "turbo run build --filter=chalk-scripts",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
@@ -17,11 +18,6 @@
     "typescript": "5.9.2"
   },
   "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "yarn@1.22.22",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "node": ">=20"
+  }
 }
