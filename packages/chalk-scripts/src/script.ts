@@ -61,7 +61,7 @@ export class Script {
         case ELogType.SUCCESS:
           return chalk.green
         case ELogType.WARNING:
-          return chalk.hex('#FFA500')
+          return chalk.hex("#FFA500")
         case ELogType.FAILURE:
           return chalk.red
         case ELogType.INSIGHT:
