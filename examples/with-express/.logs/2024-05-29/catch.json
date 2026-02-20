@@ -1,0 +1,3 @@
+[
+  {"id":"xxxxxxxxxx","created":"2024-05-29T16:44:14.726Z","elapsed":"0000.0010","stack":"903670","func":"app.get(/)","logType":"default","logText":"Writing To Logs works!"}
+]

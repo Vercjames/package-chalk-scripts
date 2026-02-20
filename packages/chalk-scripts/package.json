@@ -1,7 +1,7 @@
 {
   "name": "chalk-scripts",
   "license": "MIT",
-  "version": "2.0.0-rc.3",
+  "version": "2.0.0",
   "author": "https://github.com/vercjames",
   "homepage": "https://github.com/vercjames/package-chalk-scripts",
   "description": "A stylized,Typescript based logging package for Node 😎" ,
